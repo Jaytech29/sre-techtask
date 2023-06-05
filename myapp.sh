@@ -11,6 +11,6 @@ kubectl get ingress -n sre-techtask
 echo "###########################################################"
 echo " Checking the application url myapp.com:"
 
-docker exec -it b6b209ad7576 curl -k myapp.com
+docker exec -it $(docker ps|grep minikube|cut -f1 -d " ") curl -k myapp.com
 
 echo "###########################################################"
